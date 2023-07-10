@@ -3,6 +3,8 @@ import cors from 'cors';
 import morgan from "morgan";
 import * as dotenv from 'dotenv'
 import './src/database/dbConection'
+import productoRouter from './src/routes/producto.routes'
+
 dotenv.config(); // con esto puedo leer variables de entorno
 // configurar puerto
 // crear una instancia 
@@ -17,7 +19,8 @@ app.use(express.urlencoded({extended: true}));//permite en el obj request los st
 app.use(morgan('dev'));
 
 //rutas
-app.get('/prueba',(req,res)=>{
-res.send('esto es una prueba de res en get ');
-});
+app.use("/apireceta", productoRouter)
+// http://localhost:4000/apiReceta/productos
+
+
 
