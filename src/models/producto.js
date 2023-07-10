@@ -11,7 +11,7 @@ const productoSchema = new Schema({
     cantidadPlatos:{
         type: Number,
         min: 1,
-        max:10000,
+        max:100,
         required: true
     },
     imagen:{
